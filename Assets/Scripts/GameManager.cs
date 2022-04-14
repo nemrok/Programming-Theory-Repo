@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     private int score;
     private int health;
     private bool isGameOver;
+
+    // ENCAPSULATION Is game over get/set
     public bool IsGameOver
     {
         get {return isGameOver;}
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour
         return instance;
     }
 
+    // ABSTRACTION reset game
     public void Reset()
     {
         score = 0;
@@ -53,12 +56,14 @@ public class GameManager : MonoBehaviour
         healthText.text = "Health: " + health;
     }
 
+    // ABSTRACTION add score points
     public void AddScorePoints(int points)
     {
         score += points;
         scoreText.text = "Score: " + score;
     }
 
+    // ABSTRACTION remove health
     public void RemoveHealth(int amount)
     {
         health -= amount;
@@ -77,6 +82,7 @@ public class GameManager : MonoBehaviour
         }    
     }
 
+    // ABSTRACTION add health
     public void AddHealth(int amount)
     {
         health += amount;
@@ -89,6 +95,7 @@ public class GameManager : MonoBehaviour
         healthText.text = "Health: " + health;
     }
 
+    // ABSTRACTION load title menu after space key pressed
     IEnumerator LoadTitleMenu()
     {   
         gameOver.SetActive(true);

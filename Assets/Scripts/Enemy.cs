@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Abstract base enemy class
 public abstract class Enemy : MonoBehaviour
 {
     private float zDestroy = -10.0f;
@@ -33,7 +34,10 @@ public abstract class Enemy : MonoBehaviour
             rigidBody.angularVelocity = Vector3.zero;
         }
     }
+    
+    // Abstract get speed method
     public abstract int GetSpeed();
 
+    // Abstract get damage method
     public abstract int GetDamage();
 }
